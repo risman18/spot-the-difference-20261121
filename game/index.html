@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Lane — Spot the Difference</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="hud-left">
+      <div class="game-title">🏮 Lantern Lane</div>
+      <div class="game-sub">Spot the Difference</div>
+    </div>
+    <div class="hud-mid">
+      <div id="levelDots" class="level-dots" aria-label="levels"></div>
+      <div id="sceneName" class="scene-name">Lantern Lane</div>
+    </div>
+    <div class="hud-right">
+      <div class="stat"><span class="stat-label">SCORE</span><span id="score" class="stat-value">0</span></div>
+      <div class="stat"><span class="stat-label">TIME</span><span id="timer" class="stat-value">3:00</span></div>
+      <div id="timerBar" class="timer-bar"><div id="timerFill" class="timer-fill"></div></div>
+    </div>
+  </header>
+
+  <main id="boards">
+    <section class="panel">
+      <div class="panel-caption"><span class="panel-tag">PANEL A</span><span class="panel-hint">the original</span></div>
+      <canvas id="panelA" width="580" height="560" tabindex="0" aria-label="Left picture"></canvas>
+    </section>
+    <div id="versus" aria-hidden="true">VS</div>
+    <section class="panel">
+      <div class="panel-caption"><span class="panel-tag">PANEL B</span><span class="panel-hint">spot 7 differences</span></div>
+      <canvas id="panelB" width="580" height="560" tabindex="0" aria-label="Right picture"></canvas>
+    </section>
+    <div id="cursorRing" aria-hidden="true"></div>
+    <div id="toast" aria-live="polite"></div>
+    <div id="overlay" class="overlay hidden"></div>
+  </main>
+
+  <footer id="statusbar">
+    <div class="remaining"><span id="remainingCount" class="remaining-num">7</span><span class="remaining-label">differences left</span></div>
+    <div class="found-list" id="foundList"></div>
+    <div class="actions">
+      <button id="hintBtn" type="button">💡 Hint <span id="hintCount">(3)</span> <kbd>H</kbd></button>
+      <button id="soundBtn" type="button" aria-pressed="true">🔊 Sound <kbd>M</kbd></button>
+      <button id="restartBtn" type="button">↻ Restart <kbd>R</kbd></button>
+    </div>
+    <div class="keys">Click a difference · Arrows move · <kbd>Enter</kbd> check · <kbd>H</kbd> hint</div>
+  </footer>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
